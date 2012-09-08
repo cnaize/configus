@@ -1,5 +1,9 @@
 require "configus/version"
 
 module Configus
-  # Your code goes here...
+  class << self
+    def build
+
+    end
+  end
 end
