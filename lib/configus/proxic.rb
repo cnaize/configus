@@ -5,7 +5,7 @@ class Configus::Proxic < BasicObject
     @attrs = {}
   end
 
-  def method_missing(key, value)
+  def method_missing(key, value = nil, &block)
     @attrs[key] = value
   end
 end
