@@ -14,4 +14,6 @@ Gem::Specification.new do |gem|
   gem.name          = "configus"
   gem.require_paths = ["lib"]
   gem.version       = Configus::VERSION
+
+  gem.add_development_dependency "rspec"
 end
