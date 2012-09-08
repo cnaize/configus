@@ -20,6 +20,6 @@ class Configus::Builder
   def config
     current_attrs = @envs.fetch @current_env, nil
 
-    #Configus::Config.new current_attrs
+    Configus::Config.new current_attrs
   end
 end

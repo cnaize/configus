@@ -1,9 +1,8 @@
 class Configus::Config
   def initialize(attrs)
-    @attrs = attrs
-    @attrs.each_pair do |k, v|
+    attrs.each_pair do |k, v|
       define_singleton_method k do
-        v
+        v.kind_of?(Hash) ? Configus::Config.new(v) : v
       end
     end
   end
