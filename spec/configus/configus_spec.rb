@@ -1,7 +1,17 @@
 require "spec_helper"
 
 describe Configus do
-  it "should have method build" do
-    Configus.respond_to?(:build).should be_true
+  before do
+    @email = 'cool@mail.com'
+
+    @config = Configus.build :development do
+      env :development do
+        mail @email
+      end
+    end
+  end
+
+  it "should build config" do
+    @config.mail.should eq @mail
   end
 end
