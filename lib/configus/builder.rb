@@ -2,7 +2,7 @@ class Configus::Builder
   class << self
     def build(environment, &block)
       builder = new environment, &block
-      builder.build_config
+      builder.config
     end
   end
 
@@ -13,14 +13,13 @@ class Configus::Builder
   end
 
   def env(name, &block)
-    proxic = Configus::Proxic.new
-    proxic.instance_eval &block
-    attrs = proxic.attrs
-    @envs[name] = attrs
+    proxy = Configus::Proxy.new block
+    @envs[name] = proxy.attrs
   end
 
-  def build_config
+  def config
     current_attrs = @envs.fetch @current_env, nil
-    Configus::Config.new current_attrs
+
+    #Configus::Config.new current_attrs
   end
 end

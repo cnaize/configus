@@ -1,9 +1,9 @@
-require "configus/version"
-require "configus/proxic"
-require "configus/config"
-require "configus/builder"
-
 module Configus
+  autoload :Version, "configus/version"
+  autoload :Proxy, "configus/proxy"
+  autoload :Config, "configus/config"
+  autoload :Builder, "configus/builder"
+
   class << self
     def build(environment, &block)
       Builder.build environment, &block
