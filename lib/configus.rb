@@ -3,6 +3,7 @@ module Configus
   autoload :Proxy, "configus/proxy"
   autoload :Config, "configus/config"
   autoload :Builder, "configus/builder"
+  autoload :Attributes, "configus/attributes"
 
   class << self
     def build(environment, &block)
